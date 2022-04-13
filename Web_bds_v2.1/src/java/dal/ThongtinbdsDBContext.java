@@ -24,7 +24,7 @@ public class ThongtinbdsDBContext extends DBContext{
         ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
         try {
             String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay, ImgAvar,Linkggmap,\n" +
-                            "(ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index FROM dbo.ThongTinBDS";
+                            "(ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index FROM thongtinbds";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next())
@@ -53,7 +53,7 @@ public class ThongtinbdsDBContext extends DBContext{
         ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
         try {
             String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay,ImgAvar,Linkggmap, tt.row_index \n" +
-                            "FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY IDbds ASC) as row_index FROM dbo.ThongTinBDS) as tt\n" +
+                            "FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY IDbds ASC) as row_index FROM thongtinbds) as tt\n" +
                             "WHERE row_index >= (? -1)*? + 1 AND row_index <= ?*?";
             
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -85,7 +85,7 @@ public class ThongtinbdsDBContext extends DBContext{
 
     public int count() {
         try {
-            String sql = "SELECT COUNT(*) as Total FROM dbo.ThongTinBDS";
+            String sql = "SELECT COUNT(*) as Total FROM thongtinbds";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -98,7 +98,7 @@ public class ThongtinbdsDBContext extends DBContext{
     }
     public int countloai(String loai) {
         try {
-            String sql = "SELECT COUNT(*) as Total FROM dbo.ThongTinBDS\n" +
+            String sql = "SELECT COUNT(*) as Total FROM thongtinbds\n" +
                             "WHERE Loaibds= ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, loai);
@@ -115,7 +115,7 @@ public class ThongtinbdsDBContext extends DBContext{
     public ArrayList<Thongtinbds> getAllthongtinbdstheoloai(String loaibds ){
         ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
         try {
-            String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay,ImgAvar,Linkggmap, (ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index FROM dbo.ThongTinBDS\n" +
+            String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay,ImgAvar,Linkggmap, (ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index FROM thongtinbds\n" +
                             "WHERE Loaibds= ?\n" +
                             "ORDER BY IDbds";
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -147,7 +147,7 @@ public class ThongtinbdsDBContext extends DBContext{
     {
         try {
             String sql = "SELECT IDbds,Tenbds,Thongtinbds,Loaibds,Khuvucbds,Giachu,Giaso,Ngay, ImgAvar,Linkggmap, (ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_index\n" +
-                            "FROM dbo.ThongTinBDS\n" +
+                            "FROM thongtinbds\n" +
                             "WHERE IDbds = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
@@ -177,8 +177,8 @@ public class ThongtinbdsDBContext extends DBContext{
     public Imgbds getImgbdstheoidimg(int id)
     {
         try {
-            String sql = "SELECT*FROM dbo.ImgBDS2\n" +
-                        "WHERE IDimg=?";
+            String sql = "SELECT*FROM imgbds2\n" +
+                        "WHERE idimg=?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
@@ -199,8 +199,8 @@ public class ThongtinbdsDBContext extends DBContext{
     public ArrayList<Imgbds> getAllimgbds(int idbds){
         ArrayList<Imgbds> imgbds = new ArrayList<>();
         try {
-            String sql = "SELECT a.IDbds, a.img, a.IDimg FROM dbo.ImgBDS2 AS a\n" +
-"                            INNER JOIN dbo.ThongTinBDS AS b\n" +
+            String sql = "SELECT a.idbds, a.img, a.IDimg FROM ImgBDS2 AS a\n" +
+"                            INNER JOIN thongtinbds AS b\n" +
 "                            ON b.IDbds = a.IDbds\n" +
 "                            WHERE b.IDbds = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -224,7 +224,7 @@ public class ThongtinbdsDBContext extends DBContext{
         ArrayList<Thongtinbds> thongtinbds = new ArrayList<>();
         try {
             String sql = "SELECT IDbds, Tenbds, Thongtinbds, Loaibds, Khuvucbds, Giachu, Giaso, Ngay, ImgAvar, row_indexFROM,Linkggmap \n" +
-                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY "+thutu+")) as row_indexFROM FROM dbo.ThongTinBDS \n" +
+                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY "+thutu+")) as row_indexFROM FROM thongtinbds \n" +
                     "			WHERE Loaibds "+Loaibds+" AND Khuvucbds "+Khuvucbds+" AND Giaso >= ? AND Giaso <= ?) t\n" +
                     "					WHERE t.row_indexFROM >= (? -1)*? + 1 AND t.row_indexFROM <= ? * ? \n" +
                     "					";
@@ -261,7 +261,7 @@ public class ThongtinbdsDBContext extends DBContext{
     public int countloaipage(String Loaibds,String Khuvucbds,Long Giasobe, Long Giasolon, int pageindex,int pagesize, String thutu) {
         try {
             String sql = "SELECT COUNT(IDbds) as Total \n" +
-                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_indexFROM FROM dbo.ThongTinBDS \n" +
+                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDbds ASC)) as row_indexFROM FROM thongtinbds \n" +
                     "			WHERE Loaibds "+Loaibds+" AND Khuvucbds "+Khuvucbds+" AND Giaso >= ? AND Giaso <= ?) t\n" +
                     "					";
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -283,16 +283,16 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void insertThongtinbds(Thongtinbds a, InputStream is)
     {
-        String sql = "INSERT INTO [ThongTinBDS]\n" +
-                "           ([Tenbds]\n" +
-                "           ,[Thongtinbds]\n" +
-                "           ,[Loaibds]\n" +
-                "           ,[Khuvucbds]\n" +
-                "           ,[Giachu]\n" +
-                "           ,[Giaso]\n" +
-                "           ,[Ngay]\n" +
-                "           ,[ImgAvar]\n"+ 
-                "            ,[Linkggmap])" +
+        String sql = "INSERT INTO `thongtinbds`"
+                + "         (`tenbds`\n" +
+"                          , `thongtinbds`\n" +
+"                          , `loaibds`\n" +
+"                          , `khuvucbds`"+ 
+                          ", `giachu`\n" +
+"                          , `giaso`\n" +
+"                          , `ngay`\n" +
+"                          , `imgavar`\n" +
+"                          , `linkggmap`) " +
                 "     VALUES\n" +
                 "           (?\n" +
                 "           ,?\n" +
@@ -343,8 +343,8 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void deleteThongtinbds(int id)
     {
-        String sql = "DELETE FROM [ThongTinBDS]\n" +
-                    "      WHERE IDbds = ?";
+        String sql = "DELETE FROM `thongtinbds`\n" +
+                    "      WHERE idbds = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -377,17 +377,10 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void updateThongtinbds(Thongtinbds t, InputStream is,int check)
     {
-        String sql = "UPDATE [ThongTinBDS]\n" +
-                "   SET [Tenbds] = ?\n" +
-                "      ,[Thongtinbds] = ?\n" +
-                "      ,[Loaibds] = ?\n" +
-                "      ,[Khuvucbds] = ?\n" +
-                "      ,[Giachu] = ?\n" +
-                "      ,[Giaso] = ?\n" +
-                "      ,[Ngay] = ?\n" +
-                "      ,[ImgAvar] = ?\n" +
-                "      ,[Linkggmap] = ?\n" +
-                " WHERE IDbds = ?";
+        String sql = "UPDATE `thongtinbds` SET `tenbds`=?,`thongtinbds`=?,"
+                + "`loaibds`=?,`khuvucbds`=?,`giachu`=?,`giaso`=?,`ngay`=?,"
+                + "`imgavar`=?,`linkggmap`=? " +
+                " WHERE idbds = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -435,8 +428,8 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void deleteImgbds(int id)
     {
-        String sql = "DELETE FROM [ImgBDS2]\n" +
-            "      WHERE IDbds = ?";
+        String sql = "DELETE FROM `imgbds2` " +
+            "      WHERE idbds = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -468,11 +461,9 @@ public class ThongtinbdsDBContext extends DBContext{
     }  
     public void insertImgbds(Imgbds a, InputStream is)
     {
-        String sql = "INSERT INTO [ImgBDS2]\n" +
-                "           ([IDbds]\n" +
-                "           ,[img])\n" +
-                "     VALUES\n" +
-                "           (?\n" +
+        String sql = "INSERT INTO `imgbds2`(`idbds`, `img`) " +
+                "     VALUES " +
+                "           (?" +
                 "           ,?)";
         PreparedStatement stm = null;
         try {
@@ -507,8 +498,8 @@ public class ThongtinbdsDBContext extends DBContext{
     
     public void deleteImgbds2(int id)
     {
-        String sql = "DELETE FROM [ImgBDS2]\n" +
-            "      WHERE IDimg = ?";
+        String sql = "DELETE FROM `imgbds2` " +
+            "      WHERE idimg = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -538,19 +529,28 @@ public class ThongtinbdsDBContext extends DBContext{
             }
         }
     }
-//    
-//     public static void main(String[] args){
-////         Long i = 700000000L;
-////         Long j = 1000000000L;
-//            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
-//            db.deleteThongtinbds(40);
-////            long millis=System.currentTimeMillis();    
-////        java.sql.Date date = new java.sql.Date(millis);
-////            Thongtinbds t = new Thongtinbds(28, "tes2", "tes1", "tes1", "tes1", "tes1", i,date,1, "tes1");
-////            db.deleteThongtinbds(28);
-//            
-////            int f = db.countloaipage("LIKE '#datnen'", "NOT LIKE '#nhatrang'", i, j, 1, 2, "ORDER BY t.Giaso ASC");
-////            System.out.println(f);
-//     }
+    
+     public static void main(String[] args){
+//         Long i = 700000000L;
+//         Long j = 1000000000L;
+            ThongtinbdsDBContext db = new ThongtinbdsDBContext();
+            int i =2;
+            ArrayList<Thongtinbds> b = db.getAllthongtinbds();
+            for (Thongtinbds d : b) {
+            System.out.println(d.getTenbds());
+            System.out.println(d.getGgmap());        
+                }
+            
+//            InputStream is = null;
+//            int i = 1;
+//            db.insertImgbds(new Imgbds(i, null, i), is);
+//            long millis=System.currentTimeMillis();    
+//        java.sql.Date date = new java.sql.Date(millis);
+//            Thongtinbds t = new Thongtinbds(28, "tes2", "tes1", "tes1", "tes1", "tes1", i,date,1, "tes1");
+//            db.deleteThongtinbds(28);
+            
+//            int f = db.countloaipage("LIKE '#datnen'", "NOT LIKE '#nhatrang'", i, j, 1, 2, "ORDER BY t.Giaso ASC");
+//            System.out.println(f);
+     }
 
 }

@@ -22,8 +22,8 @@ public class AccountDBContext extends DBContext {
     {
         try {
             String sql = "SELECT a.UserID, a.Username, a.Password, a.Displayname, a.Role, a.Sdt, b.ID, b.Vaitro \n" +
-                            "FROM dbo.Account AS a\n" +
-                            "INNER JOIN dbo.VaiTro AS b\n" +
+                            "FROM account AS a\n" +
+                            "INNER JOIN vaitro AS b\n" +
                             "ON a.Role=b.ID\n" +
                             "WHERE a.Username=? AND a.Password=?";
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -52,18 +52,8 @@ public class AccountDBContext extends DBContext {
     
     public void insertAccount(Account a)
     {
-        String sql = "INSERT INTO [Account]\n" +
-                        "           ([Username]\n" +
-                        "           ,[Password]\n" +
-                        "           ,[Displayname]\n" +
-                        "           ,[Role]\n" +
-                        "           ,[Sdt])\n" +
-                        "     VALUES\n" +
-                        "           (?\n" +
-                        "           ,?\n" +
-                        "           ,?\n" +
-                        "           ,?\n" +
-                        "           ,?)";
+        String sql = "INSERT INTO `account`( `username`, `password`, `displayname`, `role`, `sdt`) \n" +
+                        "VALUES (?,?,?,?,?)";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -102,10 +92,10 @@ public class AccountDBContext extends DBContext {
     {
         ArrayList<Account> accounts = new ArrayList<>();
         try {
-            String sql = "SELECT a.UserID, a.Username, a.Password, a.Displayname, a.Role, a.Sdt, b.ID, b.Vaitro \n" +
-                        "FROM dbo.Account AS a\n" +
-                        "INNER JOIN dbo.VaiTro AS b\n" +
-                        "ON a.Role=b.ID";
+            String sql = "SELECT a.UserID, a.Username, a.Password, a.Displayname, a.Role, a.Sdt, b.ID, b.Vaitro "
+                    + "FROM account AS a "
+                    + "INNER JOIN vaitro AS b "
+                    + "ON a.Role=b.ID";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next())
@@ -131,12 +121,12 @@ public class AccountDBContext extends DBContext {
 //    public static void main(String[] args){
 //
 //            AccountDBContext db = new AccountDBContext();
-//            ArrayList<Account> acc = db.getAllaccount();
-//            for (Account a : acc) {
+//            Account a = db.getAccount("admin", "trai123");
+////            for (Account a : acc) {
 //                System.out.println(a.getDisplayname());
 //                System.out.println(a.getSdt());
 //                System.out.println(a.getVaitro().getVaitro());
-//            }
+////            }
 //    }
     
 }

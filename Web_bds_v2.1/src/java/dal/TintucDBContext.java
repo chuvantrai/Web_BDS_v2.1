@@ -23,7 +23,7 @@ public class TintucDBContext extends DBContext{
     {
         ArrayList<Tintuc> tintucs = new ArrayList<>();
         try {
-            String sql = "SELECT ID,Tieude,Noidung,ngay,imgAvar FROM dbo.TinTuc1\n" +
+            String sql = "SELECT id,tieude,noidung,ngay,imgavar FROM tintuc1\n" +
                             "ORDER BY ngay DESC";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
@@ -46,7 +46,7 @@ public class TintucDBContext extends DBContext{
     public Tintuc getTintuctheoid(int id)
     {
         try {
-            String sql = "SELECT ID,Tieude,Noidung,ngay,imgAvar FROM dbo.TinTuc1\n" +
+            String sql = "SELECT ID,Tieude,Noidung,ngay,imgAvar FROM tintuc1\n" +
                             "WHERE ID=?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
@@ -70,7 +70,7 @@ public class TintucDBContext extends DBContext{
     public ArrayList<Tintuc> getTintuctheopage(int pageindex,int pagesize) {
         ArrayList<Tintuc> Tintucs = new ArrayList<>();
         try {
-            String sql = "SELECT ID , Tieude,t.Noidung,t.ngay,t.imgAvar FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY ngay DESC)) as row_indexFROM FROM dbo.TinTuc1) t\n" +
+            String sql = "SELECT ID , Tieude,t.Noidung,t.ngay,t.imgAvar FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY ngay DESC)) as row_indexFROM FROM tintuc1) t\n" +
                     "WHERE t.row_indexFROM >=(? -1)*? + 1 AND t.row_indexFROM <= ? * ?";
             
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class TintucDBContext extends DBContext{
     
     public int count() {
         try {
-            String sql = "SELECT COUNT(*) as Total FROM dbo.TinTuc1";
+            String sql = "SELECT COUNT(*) as Total FROM tintuc1";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -109,16 +109,7 @@ public class TintucDBContext extends DBContext{
     }
     public void insertTintuc(Tintuc a,InputStream is)
     {
-        String sql = "INSERT INTO [TinTuc1]\n" +
-                    "           ([Tieude]\n" +
-                    "           ,[Noidung]\n" +
-                    "           ,[ngay]\n" +
-                    "           ,[imgAvar])\n" +
-                    "     VALUES\n" +
-                    "           (?\n" +
-                    "           ,?\n" +
-                    "           ,?\n" +
-                    "           ,?)";
+        String sql = "INSERT INTO `tintuc1`(`tieude`, `noidung`, `ngay`, `imgavar`) VALUES (?,?,?,?)";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -154,8 +145,7 @@ public class TintucDBContext extends DBContext{
     
     public void deleteTintuc(int id)
     {
-        String sql = "DELETE FROM [TinTuc1]\n" +
-                "      WHERE ID = ?";
+        String sql = "DELETE FROM `tintuc1` WHERE id = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -187,12 +177,12 @@ public class TintucDBContext extends DBContext{
     }
     public void updateTintuc(Tintuc t, InputStream is, int check)
     {
-        String sql = "UPDATE [TinTuc1]\n" +
-                    "   SET [Tieude] = ?\n" +
-                    "      ,[Noidung] = ?\n" +
-                    "      ,[ngay] = ?\n" +
-                    "      ,[imgAvar] = ?\n" +
-                    " WHERE ID = ?";
+        String sql = "UPDATE `tintuc1` "
+                + "SET `tieude`=?,"
+                + "`noidung`=?,"
+                + "`ngay`=?,"
+                + "`imgavar`=? "
+                +" WHERE id = ?";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -240,8 +230,15 @@ public class TintucDBContext extends DBContext{
 ////        java.sql.Date date = new java.sql.Date(millis);
 ////            Tintuc a = new Tintuc(6, "tét2", "test2", date, "tset2");
 ////            db.getTintuctheoid(1);
-//                Tintuc t = db.getTintuctheoid(1);
-//                System.out.println(t.getTieude());
-//                System.out.println(t.getImgavar());
+//                
+//        ArrayList<Tintuc> acc = db.getAllTintuc();
+//                for (Tintuc a : acc) {
+//                System.out.println(a.getId());
+//                System.out.println(a.getTieude());
+//                System.out.println(a.getNoidung());
+//                System.out.println(a.getNgay());
+//                System.out.println(a.getImgavar());
+//            
+//            }
 //    }
 }

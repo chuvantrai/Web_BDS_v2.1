@@ -60,22 +60,22 @@
         <h6 class="text-uppercase font-weight-bold">Thông tin</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="../..//Web_bds_v2.0/gioithieu">Giới thiệu</a>
+          <a href="../..//Web_bds_v2.1/gioithieu">Giới thiệu</a>
         </p>
         <p>
-          <a href="../../Web_bds_v2.0/thongtinbds/tatca?Loaibds=%23nhapho">Nhà phố</a>
+          <a href="../../Web_bds_v2.1/thongtinbds/tatca?Loaibds=%23nhapho">Nhà phố</a>
         </p>
         <p>
-          <a href="../../Web_bds_v2.0/thongtinbds/tatca?Loaibds=%23datnen">Đất nền</a>
+          <a href="../../Web_bds_v2.1/thongtinbds/tatca?Loaibds=%23datnen">Đất nền</a>
         </p>
         <p>
-          <a href="../../Web_bds_v2.0/thongtinbds/tatca?Loaibds=%23bietthu">Biệt thự</a>
+          <a href="../../Web_bds_v2.1/thongtinbds/tatca?Loaibds=%23bietthu">Biệt thự</a>
         </p>
         <p>
-          <a href="../../Web_bds_v2.0/thongtinbds/tatca?Loaibds=%23canho">Căn hộ</a>
+          <a href="../../Web_bds_v2.1/thongtinbds/tatca?Loaibds=%23canho">Căn hộ</a>
         </p>
         <p>
-          <a href="../../Web_bds_v2.0/tintuc/tatca">Tin tức</a>
+          <a href="../../Web_bds_v2.1/tintuc/tatca">Tin tức</a>
         </p>
         
       </div>
@@ -88,7 +88,7 @@
         <h6 class="text-uppercase font-weight-bold">Yêu cầu tư vấn</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="../../Web_bds_v2.0/yeucau" role="button" class="btn btn-primary">Liên hệ trực tiếp</a>
+          <a href="../../Web_bds_v2.1/yeucau" role="button" class="btn btn-primary">Liên hệ trực tiếp</a>
         </p>
         
 

@@ -96,4 +96,13 @@ section{
 .dv2{
     font-size: 21px;
 }
-
+@media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+    .tieude1{
+        height: 45px;
+        overflow:hidden;
+    }
+    .tieude2 p{
+        margin-bottom: 0px;
+        font-size: 10px;
+    }
+  }

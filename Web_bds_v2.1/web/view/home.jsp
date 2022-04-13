@@ -60,9 +60,9 @@
                 <%if(index1==0){ index1+=1;%>
                 <div class="carousel-inner" style="padding-left: 20px;">
                     <div id="example2"><img src="view/getImageTintuc.jsp?id=<%=t.getId()%>" class="d-block w-100"/></div>
-                    <div class="carousel-caption d-md-block " style="letter-spacing: -1px;background: rgb(0, 0, 0); /* fallback color */background: rgba(0, 0, 0, 0.7);">
-                        <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5 style="" ><%=t.getTieude()%></h5></a>
-                        <p style=""><ion-icon name="calendar-outline"></ion-icon><%=t.getNgay()%></p>
+                    <div class="carousel-caption d-md-block tieude2" style="letter-spacing: -1px;background: rgb(0, 0, 0); /* fallback color */background: rgba(0, 0, 0, 0.7);">
+                        <a href="tintuc/detail?tintucid=<%=t.getId()%>"><h5 style="" ><div class="tieude1"><%=t.getTieude()%></div></h5></a>
+                        <p><ion-icon name="calendar-outline"></ion-icon><%=t.getNgay()%></p>
                     </div>
                 </div>
                 <%}%>
@@ -310,7 +310,7 @@
           </p>
           <p>Phục vụ khách hàng bằng cả trái tim. Niềm vui của chúng tôi là thấy khách hàng của mình an cư lập nghiệp - đầu tư sinh lời cao.</p>
           <div class="solution-btn">
-          <a href="../../Web_bds_v2.0/yeucau" class="btn btn-primary" role="button">LIÊN HỆ NGAY!<span style="top: -4.21249px; left: 21px;"></span></a>
+          <a href="../../Web_bds_v2.1/yeucau" class="btn btn-primary" role="button">LIÊN HỆ NGAY!<span style="top: -4.21249px; left: 21px;"></span></a>
           </div>
           </div>
       </div>

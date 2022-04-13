@@ -126,7 +126,7 @@
                                               <img src="../view/getImageBDS.jsp?id=<%=i.getIdimg()%>" alt="Hills"> 
                                               <c:set var="num" value="/admin"/>
                                               <c:if test="${sessionScope.account.vaitro.vaitro==num}">
-                                              <div class="carousel-caption d-md-block " > <a class="btn btn-danger" href="../../Web_bds_v2.0/imgbds/delete?idimg=<%=i.getIdimg()%>&idbds=${requestScope.thongtinbds.idbds}" role="button">Xóa </a></div>
+                                              <div class="carousel-caption d-md-block " > <a class="btn btn-danger" href="../../Web_bds_v2.1/imgbds/delete?idimg=<%=i.getIdimg()%>&idbds=${requestScope.thongtinbds.idbds}" role="button">Xóa </a></div>
                                               </c:if>
                                               </div>
                                               <%}%>
@@ -145,7 +145,7 @@
 <!--img-->  
                 <c:set var="num" value="/admin"/>
                 <c:if test="${sessionScope.account.vaitro.vaitro==num}">
-                    <form action="../../Web_bds_v2.0/imgbds/insert" method="POST" enctype="multipart/form-data">
+                    <form action="../imgbds/insert" method="POST" enctype="multipart/form-data">
                         Thêm ảnh: <input type="file" name="img" accept=".jpg, .jpeg, .png" placeholder="Image"> <input type="submit" value="thêm">
                         <input type="text" name="idbds" value="${requestScope.thongtinbds.idbds}" style="display: none">
                     </form>

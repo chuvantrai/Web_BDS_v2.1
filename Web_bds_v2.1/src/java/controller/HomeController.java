@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dal.AccountDBContext;
 import dal.ThongtinbdsDBContext;
 import dal.TintucDBContext;
 import java.io.IOException;
@@ -14,8 +15,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 import model.Thongtinbds;
 import model.Tintuc;
+import model.Vaitro;
 
 /**
  *
@@ -36,6 +39,9 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+//        TintucDBContext db = new TintucDBContext();
+//        ArrayList<Tintuc> tintucs = db.getAllTintuc(); 
+        
         
         TintucDBContext db = new TintucDBContext();
         ArrayList<Tintuc> tintucs = db.getAllTintuc();  

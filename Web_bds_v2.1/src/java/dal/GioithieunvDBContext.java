@@ -22,7 +22,7 @@ public class GioithieunvDBContext extends DBContext{
     {
         ArrayList<Gioithieunv> gioithieus = new ArrayList<>();
         try {
-            String sql = "SELECT IDnv, Tennv,Chitiet,Img FROM dbo.GioiThieuNV";
+            String sql = "SELECT IDnv, Tennv,Chitiet,Img FROM gioithieunv";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next())

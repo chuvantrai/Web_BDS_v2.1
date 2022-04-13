@@ -23,7 +23,7 @@ public class YeucauDBContext extends DBContext{
         ArrayList<Yeucau> yeucaus = new ArrayList<>();
         try {
             String sql = "SELECT IDyeucau,Tennguoigui,Sdt, Noidung,Ngaygui, UserID \n" +
-                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDyeucau DESC)) as row_index FROM YeuCau) y\n" +
+                    "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDyeucau DESC)) as row_index FROM yeucau) y\n" +
                     "WHERE y.row_index >= (? -1)*?+1 AND y.row_index <= ? * ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, pageindex);
@@ -52,7 +52,7 @@ public class YeucauDBContext extends DBContext{
         try {
             String sql = "SELECT COUNT(*) as Total\n" +
                         "FROM (SELECT * ,(ROW_NUMBER() OVER (ORDER BY IDyeucau ASC)) as row_index "
-                    + "FROM YeuCau) y";
+                    + "FROM yeucau) y";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -66,18 +66,8 @@ public class YeucauDBContext extends DBContext{
     
     public void insertYeucau(Yeucau a)
     {
-        String sql = "INSERT INTO [YeuCau]\n" +
-                    "           ([Tennguoigui]\n" +
-                    "           ,[Sdt]\n" +
-                    "           ,[Noidung]\n" +
-                    "           ,[Ngaygui]\n" +
-                    "           ,[UserID])\n" +
-                    "     VALUES\n" +
-                    "           (?\n" +
-                    "           ,?\n" +
-                    "           ,?\n" +
-                    "           ,?\n" +
-                    "           ,?)";
+        String sql = "INSERT INTO `yeucau`( `tennguoigui`, `sdt`, `noidung`, `ngaygui`, `userid`) "
+                + "VALUES (?,?,?,?,?)";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
@@ -114,8 +104,7 @@ public class YeucauDBContext extends DBContext{
     
      public void deleteYeucau(int id)
     {
-        String sql = "DELETE FROM [YeuCau]\n" +
-                "      WHERE IDyeucau =? ";
+        String sql = "DELETE FROM `yeucau` WHERE idyeucau =? ";
         PreparedStatement stm = null;
         try {
             stm = connection.prepareStatement(sql);
