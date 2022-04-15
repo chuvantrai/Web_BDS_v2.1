@@ -87,9 +87,9 @@
         <%}
              index1+=1;
             }%>
-            <a href="tintuc/tatca">Tất cả</a>
+            
       </div>
-      
+            <div class="col-12 mb-3" style="text-align: center;"><a href="tintuc/tatca" >Tất cả</a></div>
     </div>
   
 
@@ -123,6 +123,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="view/getImageAvarBDS.jsp?id=<%=t.getIdbds()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
+                                                                <span style="color: #aaa;float: right;"><i class="bi bi-geo-alt-fill"></i> <%=t.getKhuvucbds()%> </span>
                                                                 <h4 class="card-title" ><div style="height: 90px;overflow:hidden;">
                                                                     #<%=t.getIdbds()%>.<%=t.getTenbds()%></div></h4>
                                                                     <p class="card-text">Giá: <samp style="color: red;"><%=t.getGiachu()%> </samp>  <i class="bi bi-cash-coin" style="color: #49be25"></i></p>
@@ -173,6 +174,8 @@
                                                             
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
+                                                                
+                                                                <span style="color: #aaa;float: right;"><i class="bi bi-geo-alt-fill"></i> <%=t.getKhuvucbds()%> </span> 
                                                                 <h4 class="card-title" >
                                                                     <div style="height: 90px;overflow:hidden;">
                                                                     #<%=t.getIdbds()%>.<%=t.getTenbds()%></div>
@@ -224,6 +227,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="view/getImageAvarBDS.jsp?id=<%=t.getIdbds()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
+                                                                <span style="color: #aaa;float: right;"><i class="bi bi-geo-alt-fill"></i> <%=t.getKhuvucbds()%> </span>
                                                                 <h4 class="card-title" >
                                                                     <div style="height: 90px;overflow:hidden;">
                                                                     #<%=t.getIdbds()%>.<%=t.getTenbds()%></div>
@@ -275,6 +279,7 @@
                                                             <img class="img-fluid" alt="100%x280" src="view/getImageAvarBDS.jsp?id=<%=t.getIdbds()%>">
                                                             <div class="card-body">
                                                                 <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
+                                                                <span style="color: #aaa;float: right;"><i class="bi bi-geo-alt-fill"></i> <%=t.getKhuvucbds()%> </span>
                                                                 <h4 class="card-title" >
                                                                     <div style="height: 90px;overflow:hidden;">
                                                                     #<%=t.getIdbds()%>.<%=t.getTenbds()%></div>

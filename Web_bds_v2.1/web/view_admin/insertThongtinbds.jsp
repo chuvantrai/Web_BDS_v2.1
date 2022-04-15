@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Thông tin sản phẩm bất động sản (xuống dòng thêm <samp style="color: #50bedb">&lt;br&gt;</samp>)</label>
+                    <label for="exampleFormControlTextarea1">Thông tin sản phẩm bất động sản :</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="thongtin"></textarea>
                 </div>
                 <div class="form-group col-md-12">
@@ -72,6 +72,13 @@
                     <input type="file" name="img" accept=".jpg, .jpeg, .png" placeholder="Image">
                 </div>
                 <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Thêm</button></div>
+                <!-- thư viện ckeditor 4 -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
+                <script>
+                CKEDITOR.replace( 'thongtin' );//name textarea
+                </script>
+                <!--.... -->
                 </form>
             </div>
             <div class="col-6 col-md-4 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
@@ -93,7 +100,8 @@
                 </div>
             </div>
         </div>
-
+        
+         
         <%@include file="../client/component/footer_jsboostrap_icon.jsp" %>
     </body>
 </html>

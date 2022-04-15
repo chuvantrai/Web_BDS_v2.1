@@ -32,9 +32,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nội dung tin tức (xuống dòng thêm <samp style="color: #50bedb">&lt;br&gt;</samp>)<br>
-                        Thêm ảnh vào giữa đoạn văn VD: <samp style="color: #50bedb">&lt;img src="../img/tintuc/<samp style="color: red">tintuc5.jpg</samp>" alt=""&gt;</samp> chữ đỏ là tên file ảnh </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung" >${requestScope.tintuc.noidung}</textarea>
+                    <label for="exampleFormControlTextarea1">Nội dung tin tức:</label>
+                     
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="30" name="noidung" >${requestScope.tintuc.noidung}</textarea>
                 </div>
                 <div class="form-group col-md-12">
                     <label for="inputEmail4">Ảnh chính của tin tức </label><br>
@@ -43,6 +43,13 @@
                 </div>
                 <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Lưu thay đổi</button></div>
                 <input type="text" name="idtintuc" value="${requestScope.tintuc.id}" style="display: none">
+                <!-- thư viện ckeditor 4 -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+                <script>
+                CKEDITOR.replace( 'noidung' );//name textarea
+                </script>
+                <!--.... -->
                 </form>
             </div>
             <div class="col-6 col-md-4 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
@@ -64,7 +71,7 @@
                 </div>
             </div>
         </div>
-
+                
         <%@include file="../client/component/footer_jsboostrap_icon.jsp" %>
     </body>
 </html>

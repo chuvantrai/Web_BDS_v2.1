@@ -77,7 +77,7 @@
                 font-size: 25px;
             }
             .chu3{
-                    font-size: 41px;
+                    font-size: 35px;
                 }
             @media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
                 .anh img{
@@ -100,7 +100,8 @@
                     font-size: 20px;
                 }
                 .chu3{
-                    font-size: 30px;
+                    font-size: 25px;
+                    font-weight: bolder;
                 }
             }
         </style>
@@ -152,7 +153,7 @@
                 </c:if>
                 <br>
                 <p class="chu3">${requestScope.thongtinbds.tenbds}</p>
-                <br><br>
+                
                 <p class="chu1">${requestScope.thongtinbds.thongtinbds}</p>
                 <style>
                     

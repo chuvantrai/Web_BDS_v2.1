@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item ">
-            <a class="nav-link" href="/Web_bds_v2.1/home">Trang Chủ </a>
+            <a class="nav-link" href="../../Web_bds_v2.1/thongtinbds/tatca?Loaibds=&thutu=moinhat&Khuvucbds=&locGia=">Mua bán đất </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="/Web_bds_v2.1/gioithieu">Giới Thiệu</a>

@@ -41,12 +41,15 @@ public class DetailThongtinbdsController extends HttpServlet {
         int bdsid = Integer.parseInt(request.getParameter("thongtinbdsid"));
         Thongtinbds thongtinbds= db.getThongtinbdstheoid(bdsid);
         request.setAttribute("thongtinbds", thongtinbds);// thong tin bds
+        request.setAttribute("titlethongtinbds", thongtinbds.getTenbds());
         
         ArrayList<Thongtinbds> thongtinbdscungloai = db.getAllthongtinbdstheoloai(thongtinbds.getLoaibds());
-        request.setAttribute("thongtinbdscungloai", thongtinbdscungloai);// list thong tin bds
+        request.setAttribute("thongtinbdscungloai", thongtinbdscungloai);// list thong tin bds 
+        
         
         ArrayList<Imgbds> imgbds = db.getAllimgbds(bdsid);  
         request.setAttribute("imgbds", imgbds);// list all imgbds
+        
         request.getRequestDispatcher("../view/detailthongtinbds.jsp").forward(request, response);
     }
 

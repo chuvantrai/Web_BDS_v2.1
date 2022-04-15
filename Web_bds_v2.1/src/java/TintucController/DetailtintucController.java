@@ -39,6 +39,7 @@ public class DetailtintucController extends HttpServlet {
         int bdsid = Integer.parseInt(request.getParameter("tintucid"));
         Tintuc tintuc = db.getTintuctheoid(bdsid);
         request.setAttribute("tintuc", tintuc);
+        request.setAttribute("titletintuc", tintuc.getTieude());
         
         ArrayList<Tintuc> tintucs = db.getAllTintuc();  
         request.setAttribute("tintucs", tintucs);// list all tintuc

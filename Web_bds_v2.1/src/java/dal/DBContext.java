@@ -17,12 +17,12 @@ public class DBContext {
     public DBContext()
     {
         try {
-//            String user="root";
-//            String pass = "";
-//            String url = "jdbc:mysql://localhost:3306/gaclbz1f_webbdsv20";
-            String user="sUHhJSYupq";
-            String pass = "bOBM8Ipj2V";
-         String url = "jdbc:mysql://remotemysql.com:3306/sUHhJSYupq";
+            String user="root";
+            String pass = "";
+            String url = "jdbc:mysql://localhost:3306/gaclbz1f_webbdsv20";
+//            String user="sUHhJSYupq";
+//            String pass = "bOBM8Ipj2V";
+//         String url = "jdbc:mysql://remotemysql.com:3306/sUHhJSYupq";
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException ex) {

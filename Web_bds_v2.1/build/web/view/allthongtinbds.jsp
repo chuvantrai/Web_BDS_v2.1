@@ -65,9 +65,36 @@
                     <option value="cao-thap" <%=(thutu1.equals("cao-thap"))?"selected=\"selected\"":""%>>Giá từ cao tới thấp</option>
                 </select> 
             </div>
+                
+<!--                <div class="form-inline  align-items-center my-2 checkbox bg-light border mx-lg-2 loc2"> 
+                <label>Khu vực:</label>
+                <select name="Khuvucbds" id="country" >
+                    <option value="" <%=(Khuvucbds.equals(""))?"selected=\"selected\"":"" %>>--</option>
+                    <option value="#nhatrang" <%=(Khuvucbds.equals("#nhatrang"))?"selected=\"selected\"":"" %>>Nha Trang</option>
+                    <option value="#canlam" <%=(Khuvucbds.equals("#canlam"))?"selected=\"selected\"":"" %>>Cam Lâm</option>
+                    <option value="#diemkhanh" <%=(Khuvucbds.equals("#diemkhanh"))?"selected=\"selected\"":"" %>>Diên Khánh</option>
+                    <option value="#khanhvinh" <%=(Khuvucbds.equals("#khanhvinh"))?"selected=\"selected\"":"" %>>Khánh Vĩnh</option>
+                    <option value="#camrang" <%=(Khuvucbds.equals("#camrang"))?"selected=\"selected\"":"" %>>Cam Ranh</option>
+                    <option value="#ninhhoa" <%=(Khuvucbds.equals("#ninhhoa"))?"selected=\"selected\"":"" %>>Ninh Hòa</option>
+                    <option value="#vanninh" <%=(Khuvucbds.equals("#vanninh"))?"selected=\"selected\"":"" %>>Vạn Ninh</option>
+                    <option value="#khuvuckhac" <%=(Khuvucbds.equals("#khuvuckhac"))?"selected=\"selected\"":"" %>>Khu Vực Khác</option>
+                </select>
+                <label>Giá:</label>
+                <select name="locGia" id="country">
+                    <option value="" <%=(locGia.equals(""))?"selected=\"selected\"":"" %>>--</option>
+                    <option value="<500" <%=(locGia.equals("<500"))?"selected=\"selected\"":"" %>>< 500 triệu</option>
+                    <option value="500-800" <%=(locGia.equals("500-800"))?"selected=\"selected\"":"" %>>500-800tr</option>
+                    <option value="800-1t" <%=(locGia.equals("800-1t"))?"selected=\"selected\"":"" %>>800tr-1tỷ</option>
+                    <option value="1-3t" <%=(locGia.equals("1-3t"))?"selected=\"selected\"":"" %>>1 - 3 tỷ</option>
+                    <option value="3-7t" <%=(locGia.equals("3-7t"))?"selected=\"selected\"":"" %>>3 - 7 tỷ</option>
+                    <option value="7-10t" <%=(locGia.equals("7-10t"))?"selected=\"selected\"":"" %>>7 - 10 tỷ</option>
+                    <option value="10-20t" <%=(locGia.equals("10-20t"))?"selected=\"selected\"":"" %>>10 - 20 tỷ</option>
+                    <option value=">20t" <%=(locGia.equals(">20t"))?"selected=\"selected\"":"" %>>≥ 20 tỷ</option>
+                </select>
+            </div>-->
         </div>
         <div class="d-sm-flex align-items-sm-center pt-2 " style=" width: 80%;">
-            <div id="paggerbot" class="pagger col-lg-12" style="margin-left: 30%;clear: both;"> </div>
+            <div id="paggertop" class="pagger col-lg-12" style="margin-left: 30%;clear: both;"> </div>
         </div>
 <!--        <div class="filters"> <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filter<span class="px-1 fas fa-filter"></span></button> </div>-->
 <!--        <div class="content py-md-0 py-3">-->
@@ -100,7 +127,9 @@
                         <label class="options">≥ 20 tỷ<input type="radio" name="locGia" value=">20t" <%=(locGia.equals(">20t"))?"checked":"" %>> <span class="checkmark"></span> </label> 
                         </ul>
                 </div>
+                
             </section> <!-- Products Section -->
+            
             </form>
                         <div class="col-mb-12" >
             <section id="products">
@@ -108,10 +137,11 @@
                     <div class="row">
                         <c:forEach items="${requestScope.thongtinbds}" var="t">
                                 
-                            <div class="col-lg-4  col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4 sanpham1" >
+                            <div class="col-lg-4  col-sm-10 offset-md-0 offset-sm-1 pt-md-0  sanpham1">
                                 <div class="card"> <img class="card-img-top" src="../view/getImageAvarBDS.jsp?id=${t.idbds}" >
                                 <div class="card-body" style="height: 185px;">
                                     <%for (int j = 0; j < 5; j++) {%> <i class="bi bi-star-fill" style="color: #feba45"></i><%}%>
+                                    <span style="color: #aaa;float: right; font-size: 14px"><i class="bi bi-geo-alt-fill"></i> ${t.khuvucbds} </span>
                                     <h6 class="font-weight-bold pt-1">
                                         <div style="height: 58px;overflow:hidden;">
                                         #${t.idbds}.${t.tenbds}</div>
@@ -141,13 +171,12 @@
     </div>
         
              
-            
+           
         <script> 
-//            pagger("paggertop",${requestScope.pageindex},${requestScope.totalpage},2);
-            pagger("paggerbot",${requestScope.pageindex},${requestScope.totalpage},2);
-//            pagger3("pagger3");
+            pagger("paggertop",${requestScope.pageindex},${requestScope.totalpage},2);
+//            pagger("paggerbot",${requestScope.pageindex},${requestScope.totalpage},2);
+            
         </script>
-        
         <%@include file="../client/component/footer_jsboostrap_icon.jsp" %>
     </body>
 </html>

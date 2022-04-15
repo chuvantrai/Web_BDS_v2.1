@@ -19,8 +19,17 @@
         <!-- css bootstrap5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+        <style>
+            @media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+                .hh2{
+                    height: 300px;
+                }
+            }
+        </style>
+        
     </head>
     <body>
+        
 <!--        <form action="registered" method="POST" onsubmit = "return checkForm()">
             Tên Đăng Nhập: <input type="text" name="username" maxlength="10" id="dk1"/>(ít nhất 5 kí tự và tối đa 10 kí tự)
             <br/>
@@ -33,14 +42,15 @@
             <br/>
             <p>${requestScope.thongbao}</p>-->
          
-            <div class="container">
-        <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+ 
+            <div >
+        <div class="row hh2">
+          <div class="col-sm-9 col-md-12 col-lg-5 mx-auto">
             <div class="card border-0 shadow rounded-3 my-5">
-              <div class="card-body p-4 p-sm-5">
+             <div class="card-body p-10 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng Ký Tài Khoản</h5>
                 <p class="thongbao1">${requestScope.thongbao}</p>
-                <form action="registered" method="POST" onsubmit = "return checkForm()"> 
+<!--                <form action="registered" method="POST" onsubmit = "return checkForm()"> 
                   <div class="form-floating mb-3">
                     <input type="text" name="username" class="form-control dk1" id="floatingInput" placeholder="Username" maxlength="10">
                     <label for="floatingInput">Tên đăng nhập</label>
@@ -64,7 +74,8 @@
                   <div class="d-grid">
                         <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng Ký</button>
                   </div>
-                  </form>
+                  </form>-->
+                    <h5 style="color: red; text-align: center;"><i class="bi bi-shield-lock-fill"></i> Tính năng đăng kí tài khoản đã tạm khóa!!!</h5>
                   <hr class="my-4">
                   <form action="login" method="GET"> 
                   <div class="d-grid mb-2">
@@ -85,5 +96,9 @@
           </div>
         </div>
       </div>
+             
+         
+      <!--        link icon boostrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">        
     </body>
 </html>

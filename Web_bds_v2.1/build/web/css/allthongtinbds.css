@@ -407,3 +407,16 @@ img {
 footer{
     clear: both;
 }
+/*.loc2{
+     
+    }*/
+@media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+    nav ul{
+        margin-bottom: 0px;
+    }
+  }
+/*  @media only screen and (min-width: 550px) {chỉnh cho màn dưới 900px
+    .loc2{
+        display: none;
+    }
+  }*/

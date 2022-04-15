@@ -16,7 +16,7 @@ function checkForm4(){
         return false;
     }
     if(noidung==''||noidung.length <=0){
-        alert('Không được để trống!');
+        alert('Không được để trống nội dung!');
         return false;
     }
     if(giachu==''||giachu.length <=0){

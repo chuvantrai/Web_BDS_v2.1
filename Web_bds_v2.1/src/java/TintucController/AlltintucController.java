@@ -60,6 +60,8 @@ public class AlltintucController extends HttpServlet {
         int totalpage = (count%pagesize==0)?(count/pagesize):(count / pagesize)+1;
         request.setAttribute("totalpage", totalpage);
         request.setAttribute("pageindex", pageindex);
+        String tile = "Tin tức bất động sản Nha Trang - Khánh hòa mới nhất, Những dự án bất động sản mới tại Nha Trang - Khánh Hòa";
+        request.setAttribute("tilealltintuc", tile);
         request.getRequestDispatcher("../view/alltintuc.jsp").forward(request, response);
     }
 

@@ -28,6 +28,7 @@
     }
     .chitiet img{
         width: 100%;
+/*        height: 350px;*/
     }
     .chitiet2 img{
         width: 100%;
@@ -38,9 +39,9 @@
             <div class="col-sm-8 chitiet">
                 <h2>${requestScope.tintuc.tieude}</h2>
                 <p>ngày: ${requestScope.tintuc.ngay}</p>
-                <img src="../view/getImageTintuc.jsp?id=${requestScope.tintuc.id}" alt="">
-                <br><br>
-                <p>${requestScope.tintuc.noidung}</p>
+<!--                <img src="../view/getImageTintuc.jsp?id=${requestScope.tintuc.id}" alt="">-->
+                
+                ${requestScope.tintuc.noidung}
               </div>
 
           <div class="col-sm-4 shadow-none p-3 mb-5 bg-light rounded chitiet2">

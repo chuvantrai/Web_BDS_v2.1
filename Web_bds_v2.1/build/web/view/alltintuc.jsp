@@ -55,6 +55,12 @@
             .para {
                 font-size: 16px
             }
+            @media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+                .news1 h2{
+                    font-size: 24px;
+                    text-align: center;
+                }
+            }
         </style>
     </head>
     <body>
@@ -63,6 +69,9 @@
         <div class="container mt-5 mb-5">
             <div class="d-flex justify-content-center row">
                 <div class="col-md-10">
+                    <div class="col-12 mb-3  news1">
+                    <h2 >Thông Tin Bất Động Sản Nha Trang Mới Nhất</h2>
+                    </div>
                     <div id="paggertop" class="pagger"> </div><br>
                     <c:forEach items="${requestScope.tintuc}" var="t">
                         <div class="row p-2 bg-white border rounded">

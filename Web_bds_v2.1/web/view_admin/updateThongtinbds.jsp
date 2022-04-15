@@ -79,6 +79,13 @@
                 </div>
                 <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Lưu thay đổi</button></div>
                 <input type="text" name="idbds" value="${requestScope.thongtinbds.idbds}" style="display: none">
+                <!-- thư viện ckeditor 4 -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="//cdn.ckeditor.com/4.18.0/basic/ckeditor.js"></script>
+                <script>
+                CKEDITOR.replace( 'thongtin' );//name textarea
+                </script>
+                <!--.... -->
                 </form>
             </div>
             <div class="col-6 col-md-4 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">

@@ -32,14 +32,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nội dung tin tức (xuống dòng thêm <samp style="color: #50bedb">&lt;br&gt;</samp>)<br>
-                        Thêm ảnh vào giữa đoạn văn VD: <br>
-                        Cách 1: <samp style="color: #50bedb">&lt;img src="https://drive.google.com/uc?export=view&id=<samp style="color: red">ABC</samp>"&gt;</samp> Thay id link ảnh driver vào chữ đỏ
-                        <br>
-                        <samp style="color: #50bedb">https://drive.google.com/file/d/<samp style="color: red">ABC</samp>/view</samp>  Chữ đỏ là id của link ảnh driver
-                        <br>
-                        Cách 2: <samp style="color: #50bedb">&lt;img src="<samp style="color: red">địa chỉ liên kết của ảnh</samp>"&gt;</samp> Thay địa chỉ liên kết của ảnh vào chữ đỏ
-                    </label>
+                    <label for="exampleFormControlTextarea1">Nội dung tin tức:</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung"></textarea>
                 </div>
                 <div class="form-group col-md-12">
@@ -47,6 +40,13 @@
                     <input type="file" name="img" accept=".jpg, .jpeg, .png" placeholder="Image"/>
                 </div>
                 <div style="padding-bottom: 25px;"> <button type="submit" class="btn btn-primary btn-lg">Thêm</button></div>
+                <!-- thư viện ckeditor 4 -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+                <script>
+                CKEDITOR.replace( 'noidung' );//name textarea
+                </script>
+                <!--.... -->
                 </form>
             </div>
             <div class="col-6 col-md-4 shadow-none p-3 mb-5 bg-light rounded" style=" margin: 25px;">
@@ -68,7 +68,8 @@
                 </div>
             </div>
         </div>
-
+                
+                
         <%@include file="../client/component/footer_jsboostrap_icon.jsp" %>
     </body>
 </html>

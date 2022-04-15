@@ -4,12 +4,25 @@
     Author     : 03623
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         
-        <title>Bất Động Sản Nha Trang (NGOCTRAI92)</title>
+        
+        
+        <c:if test = "${requestScope.titlethongtinbds != null}">
+            <title>${requestScope.titlethongtinbds}</title>
+        </c:if>
+        <c:if test = "${requestScope.titletintuc != null}">
+            <title>${requestScope.titletintuc}</title>
+        </c:if>
+        <c:if test = "${requestScope.tilealltintuc != null}">
+            <title>${requestScope.tilealltintuc}</title>
+        </c:if>
+        <title>Website Bất Động Sản số 1 Nha Trang (NGOCTRAI92)| Mua bán nhà đất Nha Trang Khánh Hòa #1, giá đất Nha Trang Khánh Hòa cập nhật liên tục</title>
+        
         <!-- Favicons -->
         <link href="../img/logo/logo-nha-dat.png" rel="icon">
         <link href="img/logo/logo-nha-dat.png" rel="icon">
