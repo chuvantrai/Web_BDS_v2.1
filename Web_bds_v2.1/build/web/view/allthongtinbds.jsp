@@ -152,11 +152,11 @@
                                             <div class="h6 font-weight-bold">${t.giachu} <i class="bi bi-cash-coin" style="color: #49be25"></i></div> 
                                             
                                         </div>
-                                            <a href="../../Web_bds_v2.1/thongtinbds/detail?thongtinbdsid=${t.idbds}" style="text-decoration: none;"><div class="btn btn-outline-primary">Chi tiết</div></a>
+                                            <a href="../../thongtinbds/detail?thongtinbdsid=${t.idbds}" style="text-decoration: none;"><div class="btn btn-outline-primary">Chi tiết</div></a>
                                             <c:set var="num" value="/admin"/>
                                             <c:if test="${sessionScope.account.vaitro.vaitro==num}">
-                                            <a href="../../Web_bds_v2.1/thongtinbds/delete?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-danger">xóa</a>
-                                            <a href="../../Web_bds_v2.1/thongtinbds/update?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-success">Sửa</a>
+                                            <a href="../../thongtinbds/delete?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-danger">xóa</a>
+                                            <a href="../../thongtinbds/update?thongtinbdsid=${t.idbds}" style="text-decoration: none;" class="btn btn-outline-success">Sửa</a>
                                             </c:if>
                                     </div>
                                 </div>

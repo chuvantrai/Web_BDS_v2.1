@@ -127,7 +127,7 @@
                                               <img src="../view/getImageBDS.jsp?id=<%=i.getIdimg()%>" alt="Hills"> 
                                               <c:set var="num" value="/admin"/>
                                               <c:if test="${sessionScope.account.vaitro.vaitro==num}">
-                                              <div class="carousel-caption d-md-block " > <a class="btn btn-danger" href="../../Web_bds_v2.1/imgbds/delete?idimg=<%=i.getIdimg()%>&idbds=${requestScope.thongtinbds.idbds}" role="button">Xóa </a></div>
+                                              <div class="carousel-caption d-md-block " > <a class="btn btn-danger" href="../../imgbds/delete?idimg=<%=i.getIdimg()%>&idbds=${requestScope.thongtinbds.idbds}" role="button">Xóa </a></div>
                                               </c:if>
                                               </div>
                                               <%}%>

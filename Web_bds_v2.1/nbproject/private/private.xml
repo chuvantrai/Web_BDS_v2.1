@@ -2,38 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/css/allthongtinbds.css</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/updateTintuc.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/home.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view_admin/updateTintuc.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/client/component/footer_jsboostrap_icon.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/detailtintuc.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/gioithieu.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/listyeucau.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/css/style_home.css</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/TintucController/DetailtintucController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view_admin/updateThongtinbds.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/alltintuc.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/login.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/dal/DBContext.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/allthongtinbds.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/model/Thongtinbds.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view_admin/insertThongtinbds.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/model/Gioithieunv.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/insertThongtinbds.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/ThongtinbdsController/AllthongtinbdsController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/TintucController/AlltintucController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/client/component/head.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/src/java/ThongtinbdsController/DetailThongtinbdsController.java</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/client/component/header.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/css/style_login.css</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/registered.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/allthongtinbds.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/alltintuc.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/js/insertTintuc.js</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view/detailthongtinbds.jsp</file>
-            <file>file:/C:/Users/03623/OneDrive/Máy%20tính/Web_BDS_v2.1/Web_bds_v2.1/web/view_admin/insertTintuc.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
