@@ -19,10 +19,12 @@ public class DBContext {
         try {
             String user="root";
             String pass = "";
-            String url = "jdbc:mysql://localhost:3306/gaclbz1f_webbdsv20";
-//            String user="sUHhJSYupq";
-//            String pass = "bOBM8Ipj2V";
-//         String url = "jdbc:mysql://remotemysql.com:3306/sUHhJSYupq";
+            String url = "jdbc:mysql://localhost:3306/web2.0";
+//            String user="sa";
+//            String pass = "0362351671";
+//            String url = "jdbc:sqlserver://LAPTOP-OJ719L1D\\SQLEXPRESS:1433;databaseName=web_bds_v2.0";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            connection = DriverManager.getConnection(url, user, pass);
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException ex) {

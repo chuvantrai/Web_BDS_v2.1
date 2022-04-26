@@ -27,11 +27,23 @@
       background: #aaa;
     }
     .chitiet img{
+        max-height: 373px;
+        max-width: 100%;
         width: 100%;
-/*        height: 350px;*/
     }
     .chitiet2 img{
         width: 100%;
+    }
+    .chitiet img element.style {
+    width: 100%;
+    }
+    @media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+        h2{
+          font-size: 20px;  
+        }
+        .chitiet img{
+        max-height: 200px;
+    }
     }
    </style>
       <div class="container" style="margin-top:30px">
@@ -39,9 +51,8 @@
             <div class="col-sm-8 chitiet">
                 <h2>${requestScope.tintuc.tieude}</h2>
                 <p>ngày: ${requestScope.tintuc.ngay}</p>
-<!--                <img src="../view/getImageTintuc.jsp?id=${requestScope.tintuc.id}" alt="">-->
+                <p>${requestScope.tintuc.noidung}</p>
                 
-                ${requestScope.tintuc.noidung}
               </div>
 
           <div class="col-sm-4 shadow-none p-3 mb-5 bg-light rounded chitiet2">

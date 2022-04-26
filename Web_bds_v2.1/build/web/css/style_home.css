@@ -108,4 +108,36 @@ section{
     .news3{
         display: none;
     }
+    body h2{
+        font-size: 23px;
+    }
+    h1{
+        font-size: 23px;
+    }
+    .news1 p{
+         font-size: 7px;
+    }
+    .news2 h5{
+         font-size:15px;
+    }
+    .carousel-caption{
+        padding: 0px;
+    }
+    .thanhkv a{
+        padding: 3px 8px 3px 8px;
+    }
+    .th1{
+/*        width: 30%;*/
+        max-width: 35%;
+    }
+    .th1 h3{
+        font-size: 23px;
+    }
+    .th2{
+        max-width: 65%;
+        flex: 0 0 65%;
+    }
+    .rounded{
+        font-size: 15px;
+    }
   }

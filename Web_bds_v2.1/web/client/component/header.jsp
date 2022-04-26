@@ -6,10 +6,34 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- navbar-->
-    
+<style>
+    .css-3d-text {
+            font-size: 30px;
+            color: #3ba2eb;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-shadow: 0px 0px 0 rgb(17,120,193),
+                -1px 0px  0 rgb(-19,84,157),
+                -2px 0px 1px rgba(30,0,227,0.07),
+                -2px 0px 1px rgba(30,0,227,0.5),
+                0px 0px 1px rgba(30,0,227,.2);
+        }
+    @media only screen and (max-width: 900px) {/*chỉnh cho màn dưới 900px*/
+        .css-3d-text {
+            font-size: 20px;
+            color: #3ba2eb;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-shadow: 0px 0px 0 rgb(17,120,193),
+                -1px 0px  0 rgb(-19,84,157),
+                -2px 0px 1px rgba(30,0,227,0.07),
+                -2px 0px 1px rgba(30,0,227,0.5),
+                0px 0px 1px rgba(30,0,227,.2);
+        }
+    }
+
+</style>
         
       <nav class="navbar sticky-top navbar-expand-lg navbar-light " style="background-color:#e3f2fd;">
-          <a style="font-size: 30px" class="navbar-brand" href="/home"><samp style="color: rgb(75, 92, 205);">NGOCTRAI92</samp></a>
+          <a style="font-size: 25px" class="navbar-brand" href="/home"><samp class="css-3d-text" style="">batdongsan89</samp></a>
       <button
         class="navbar-toggler"
         type="button"

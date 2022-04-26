@@ -21,7 +21,7 @@
         <c:if test = "${requestScope.tilealltintuc != null}">
             <title>${requestScope.tilealltintuc}</title>
         </c:if>
-        <title>Website Bất Động Sản số 1 Nha Trang (NGOCTRAI92)| Mua bán nhà đất Nha Trang Khánh Hòa #1, giá đất Nha Trang Khánh Hòa cập nhật liên tục</title>
+        <title>Website Bất Động Sản số 1 Nha Trang (batdongsan89)| Mua bán nhà đất Nha Trang Khánh Hòa #1, giá đất Nha Trang Khánh Hòa cập nhật liên tục</title>
         
         <!-- Favicons -->
         <link href="../img/logo/logo-nha-dat.png" rel="icon">
